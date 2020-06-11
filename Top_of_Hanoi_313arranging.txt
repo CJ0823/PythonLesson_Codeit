@@ -1,0 +1,30 @@
+"""  if num_disks == 0:
+        return
+    else:
+        other_peg = 6 - start_peg - end_peg
+        hanoi(num_disks-1, start_peg, other_peg)
+        move_disk(num_disks, start_peg, end_peg)
+        hanoi(num_disks-1, other_peg, end_peg) """
+
+hanoi(3,1,3):
+    hanoi(2,1,2)
+        hanoi(1,1,3)
+            hanoi(0,1,2): None
+            move_disk(1,1,3) : #1번 disk를 1번 기둥에서 3번 기둥으로 옮긴다.
+            hanoi(0,2,3) : None
+        move_disk(2,1,2) : #2번 disk를 1번 기둥에서 2번 기둥으로 옮긴다.
+        hanoi(1,3,2)
+            hanoi(0,3,1) : None
+            move_disk(1,3,2) : #1번 disk를 3번 기둥에서 2번 기둥으로 옮긴다.
+            hanoi(0,1,2) : None
+    move_disk(3,1,3) : #3번 disk를 1번 기둥에서 3번 기둥으로 옮긴다.
+    hanoi(2,2,3)
+        hanoi(1,2,1)
+            hanoi(0,2,3) : None
+            move_disk(1,2,1) : #1번 disk를 2번 기둥에서 1번 기둥으로 옮긴다.
+            hanoi(0,3,1) : None
+        move_disk(2,2,3) : #2번 disk를 2번 기둥에서 3번 기둥으로 옮긴다.
+        hanoi(1,1,3)
+            hanoi(0,1,2) : None
+            move_disk(1,1,3) : #1번 disk를 1번 기둥에서 3번 기둥으로 옮긴다.
+            hanoi(0,2,3) : None
